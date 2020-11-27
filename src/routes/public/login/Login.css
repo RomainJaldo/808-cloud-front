@@ -1,0 +1,87 @@
+.loginCard.card{
+    color: #ffffff;
+    background: linear-gradient(180deg, rgba(146, 83, 200, 0.7) 0%, #000000 52.08%), #000000;
+    border-radius: 8px;
+    flex-direction: row;
+    min-height: 650px;
+    margin-top: 10%;
+    border: none;
+}
+
+.loginCard .card-title{
+    margin-bottom: 50px;
+}
+
+.loginCard .card-body{
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+}
+
+.loginCard form{
+    width: 100%;
+}
+
+.loginCard .bodyRight{
+    background-image: url("../../../assets/img/adrian-korte-5gn2soeAc40-unsplash.jpg");
+    background-size: cover;
+    max-width: 400px;
+}
+
+.loginCard .button{
+    background: #8437C7;
+    border: 1px solid #8437C7;
+    mix-blend-mode: normal;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.3);
+    border-radius: 40px;
+    padding: 10px 30px;
+    font-weight: bold;
+}
+
+.loginCard .button:hover, .loginCard .button:active, .loginCard .button:focus{
+    background: #6e2fa8 !important;
+    border: 1px solid #6e2fa8 !important;
+    box-shadow: none !important;
+}
+
+.loginCard .cardTitle{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 56px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.loginCard .input{
+    background: #FFFFFF;
+    mix-blend-mode: normal;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.3);
+    border-radius: 40px;
+    margin-bottom: 30px;
+    padding: 25px 30px;
+}
+
+.loginCard .login-btn{
+    margin-top: 40px;
+}
+
+@media (max-width: 992px) {
+    .loginCard.card {
+        margin-top: 15%;
+        flex-direction: column;
+    }
+
+    .loginCard .bodyRight {
+        max-width: 100%;
+    }
+
+    .loginCard .card-body{
+        padding: 30px;
+    }
+}

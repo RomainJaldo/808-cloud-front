@@ -7,6 +7,7 @@ function Home() {
   return (
     <div className="Home">
         <Link to={`/login`}>Login</Link>
+        <Link to={`/register`}>Register</Link>
         <p>Home</p>
     </div>
   );
