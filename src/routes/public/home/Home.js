@@ -1,77 +1,31 @@
 import './Home.css';
-import {Button} from '@material-ui/core';
 import React from "react";
 import {Link} from "react-router-dom";
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faPlus, faUser, faFireAlt, faPowerOff, faSearch} from '@fortawesome/free-solid-svg-icons';
-import logo from '../../../imgs/808cloud-white.png';
-import avatar from '../../../imgs/profilepicture.png';
+import NavBar from "../layout/Navbar";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import {Button} from "react-bootstrap";
 
 
 function Home() {
     return (
-        <div className="Home">
-            <NavBar/>
-            <Link to={`/login`}>Login</Link>
-            <Link to={`/`}>Home</Link>
-            HOME
-        </div>
-    );
-}
-
-function NavBar() {
-    return (
-        <div className="NavBar">
-            <div className="navbar-logo">
-                <Link to={`/`}>
-                    <img className="logo" alt="logo" src={logo}/>
-                </Link>
-                <div>808Cloud</div>
-            </div>
-            <Searchbar/>
-            <AddBeats/>
-            <div className="ProfilePicture">
-                <ProfilePicture/>
-                <PopupProfile/>
-            </div>
-        </div>
-    );
-}
-
-function Searchbar() {
-    return (
-        <div className="Searchbar">
-            <form action="">
-                <input type="text" placeholder="Rechercher.." name="search"/>
-                <button type="submit"><FontAwesomeIcon icon={faSearch}/></button>
-            </form>
-        </div>
-    );
-}
-
-function AddBeats() {
-    return (
-        <div className="AddBeats">
-            <FontAwesomeIcon icon={faPlus}/>
-        </div>
-    );
-}
-
-function ProfilePicture() {
-    return (
-        <div className="ProfilePicture">
-            <img className="avatar" alt="profilepicture" src={avatar}/>
-        </div>
-    );
-}
-
-function PopupProfile() {
-    return (
-        <div className="PopupProfile">
-            <div className="myprofile"><FontAwesomeIcon icon={faUser}/><p>Mon profil</p></div>
-            <div className="mybeats"><FontAwesomeIcon icon={faFireAlt}/><p>Mes beats</p></div>
-            <div className="logout"><FontAwesomeIcon icon={faPowerOff}/><p>Déconnexion</p></div>
-        </div>
+        <Container fluid className="Home p-0">
+            <Row className="">
+                <Col><NavBar/></Col>
+            </Row>
+            <Row>
+                <Col>
+                    <Link to={`/login`}>
+                        <Button type="button">Login</Button>
+                    </Link>
+                    <Link to={`/register`}>
+                        <Button type="button">Register</Button>
+                    </Link>
+                    <h1 className="display-1 text-center">PAGE HOME</h1>
+                </Col>
+            </Row>
+        </Container>
     );
 }
 

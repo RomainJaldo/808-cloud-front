@@ -1,0 +1,31 @@
+.navbar-container {
+    background-color: #7244A0;
+}
+
+.logo-pic {
+    height: 80px;
+}
+
+.avatar {
+    height: 80px;
+}
+
+.btn-circle {
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    padding: 0;
+    border-radius: 50%;
+}
+
+.btn-circle-xl {
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    font-size: 2.3rem;
+}
+
+.dropdown-toggle::after {
+    display: none;
+}
