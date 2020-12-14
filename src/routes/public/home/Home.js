@@ -14,7 +14,7 @@ function Home() {
             <Row className="">
                 <Col><NavBar/></Col>
             </Row>
-            <Row>
+            <Row style={{marginBottom:"6em"}}>
                 <Col>
                     <Link to={`/login`}>
                         <Button type="button">Login</Button>
@@ -22,7 +22,12 @@ function Home() {
                     <Link to={`/register`}>
                         <Button type="button">Register</Button>
                     </Link>
-                    <h1 className="display-1 text-center">PAGE HOME</h1>
+                    <h1 className="display-1 text-center">HOME</h1>
+                </Col>
+            </Row>
+            <Row>
+                <Col className="d-flex justify-content-center">
+                    Content
                 </Col>
             </Row>
         </Container>

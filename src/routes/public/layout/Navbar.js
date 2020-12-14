@@ -5,7 +5,6 @@ import avatar from "../../../assets/img/profilepicture.png";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faFireAlt, faPlus, faPowerOff, faSearch, faUser} from "@fortawesome/free-solid-svg-icons";
 import Navbar from "react-bootstrap/Navbar";
-import Form from "react-bootstrap/Form";
 import {Button, FormControl, InputGroup} from "react-bootstrap";
 import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
@@ -38,10 +37,6 @@ function NavBar() {
                                     icon={faSearch}/></Button>
                             </InputGroup.Append>
                         </InputGroup>
-                        {/*<Form inline>*/}
-                        {/*    <FormControl type="text" placeholder="Rechercher" className="mr-sm-2"/>*/}
-                        {/*    <Button type="submit" className="btn-circle"><FontAwesomeIcon icon={faSearch}/></Button>*/}
-                        {/*</Form>*/}
                         <Nav.Link href="/upload" className="d-flex align-items-center link-button">
                             <Button className="btn-circle btn-circle-xl border-0 button-upload" type="button">
                                 <FontAwesomeIcon icon={faPlus}/>
@@ -57,10 +52,10 @@ function NavBar() {
                             </div>
                         }>
 
-                            <NavDropdown.Item href="#/action-1">
+                            <NavDropdown.Item href="/profile">
                                 <FontAwesomeIcon icon={faUser}/><span className="actions">Mon profil</span>
                             </NavDropdown.Item>
-                            <NavDropdown.Item href="#/action-2">
+                            <NavDropdown.Item href="/mybeats">
                                 <FontAwesomeIcon icon={faFireAlt}/><span className="actions">Mes beats</span>
                             </NavDropdown.Item>
                             <NavDropdown.Item href="#/action-3">
