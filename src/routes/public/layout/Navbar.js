@@ -13,59 +13,65 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 
 function NavBar() {
     return (
-        <Navbar expand="lg" className="navbar-container w-100">
-            <Navbar.Brand href="/">
-                <img className="logo-pic" alt="logo" src={logo}/>
-                <h2 className="text-white">808 CLOUD</h2>
-            </Navbar.Brand>
-            <Navbar.Toggle aria-controls="basic-navbar-nav"/>
-            <Navbar.Collapse id="basic-navbar-nav">
-                <Nav className="mr-auto">
-                </Nav>
-                <Nav className="">
-                    <InputGroup className="d-flex align-items-center">
-                        <FormControl
-                            placeholder="Rechercher"
-                            aria-label="Rechercher"
-                            aria-describedby="basic-addon2"
-                        />
-                        <InputGroup.Append>
-                            <Button type="submit" className="btn-circle small"><FontAwesomeIcon icon={faSearch}/></Button>
-                        </InputGroup.Append>
-                    </InputGroup>
-                    {/*<Form inline>*/}
-                    {/*    <FormControl type="text" placeholder="Rechercher" className="mr-sm-2"/>*/}
-                    {/*    <Button type="submit" className="btn-circle"><FontAwesomeIcon icon={faSearch}/></Button>*/}
-                    {/*</Form>*/}
-                    <Nav.Link href="/upload" className="d-flex align-items-center">
-                        <Button className="btn-circle btn-circle-xl bg-dark border-0" type="button">
-                            <FontAwesomeIcon icon={faPlus}/>
-                        </Button>
-                    </Nav.Link>
+        <div>
+            <div className="oval"/>
+            <Navbar expand="lg" className="navbar-container w-100">
+                <Navbar.Brand href="/" className="navbar-brand">
+                    <img className="logo-pic" alt="logo" src={logo}/>
+                    <h2 className="text-white brand">808 CLOUD</h2>
+                </Navbar.Brand>
 
-                    <NavDropdown title={
-                        <div className="pull-left d-flex align-items-center">
-                            <img className="avatar rounded-circle z-depth-2"
-                                 src={avatar}
-                                 alt="user pic"
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className="mr-auto">
+                    </Nav>
+                    <Nav className="">
+                        <InputGroup className="d-flex align-items-center">
+                            <FormControl
+                                placeholder="Rechercher"
+                                aria-label="Rechercher"
+                                aria-describedby="basic-addon2"
+                                className="navbar-input"
                             />
-                        </div>
-                    } id="basic-nav-dropdown">
+                            <InputGroup.Append className="inputgroup">
+                                <Button type="submit"
+                                        className="btn-circle small button-submit shadow-none"><FontAwesomeIcon
+                                    icon={faSearch}/></Button>
+                            </InputGroup.Append>
+                        </InputGroup>
+                        {/*<Form inline>*/}
+                        {/*    <FormControl type="text" placeholder="Rechercher" className="mr-sm-2"/>*/}
+                        {/*    <Button type="submit" className="btn-circle"><FontAwesomeIcon icon={faSearch}/></Button>*/}
+                        {/*</Form>*/}
+                        <Nav.Link href="/upload" className="d-flex align-items-center link-button">
+                            <Button className="btn-circle btn-circle-xl border-0 button-upload" type="button">
+                                <FontAwesomeIcon icon={faPlus}/>
+                            </Button>
+                        </Nav.Link>
 
-                        <NavDropdown.Item href="#/action-1">
-                            <FontAwesomeIcon icon={faUser}/><span>Mon profil</span>
-                        </NavDropdown.Item>
-                        <NavDropdown.Item href="#/action-2">
-                            <FontAwesomeIcon icon={faFireAlt}/><span>Mes beats</span>
-                        </NavDropdown.Item>
-                        <NavDropdown.Item href="#/action-3">
-                            <FontAwesomeIcon icon={faPowerOff}/><span>Déconnexion</span>
-                        </NavDropdown.Item>
+                        <NavDropdown id="basic-nav-dropdown" alignRight title={
+                            <div className="pull-left d-flex align-items-center">
+                                <img className="avatar rounded-circle z-depth-2"
+                                     src={avatar}
+                                     alt="user pic"
+                                />
+                            </div>
+                        }>
 
-                    </NavDropdown>
-                </Nav>
-            </Navbar.Collapse>
-        </Navbar>
+                            <NavDropdown.Item href="#/action-1">
+                                <FontAwesomeIcon icon={faUser}/><span className="actions">Mon profil</span>
+                            </NavDropdown.Item>
+                            <NavDropdown.Item href="#/action-2">
+                                <FontAwesomeIcon icon={faFireAlt}/><span className="actions">Mes beats</span>
+                            </NavDropdown.Item>
+                            <NavDropdown.Item href="#/action-3">
+                                <FontAwesomeIcon icon={faPowerOff}/><span className="actions">Déconnexion</span>
+                            </NavDropdown.Item>
+
+                        </NavDropdown>
+                    </Nav>
+                </Navbar.Collapse>
+            </Navbar>
+        </div>
     );
 }
 
