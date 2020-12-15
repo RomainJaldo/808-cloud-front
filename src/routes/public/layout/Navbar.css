@@ -4,13 +4,13 @@
 }
 
 .oval{
-    position: absolute;
-    width: 100%;
+    position: fixed;
+    width: 110%;
     height: 600px;
-    left: 0;
+    left: -5%;
     top: -250px;
-    background-image: linear-gradient(180deg, #9253C8 32.56%, #08121C 96.53%);
-    border-radius: 50%;
+    background-image: linear-gradient(180deg, #9253C8 40.56%, #08121C 95.53%);
+    border-radius: 40%;
 }
 
 .navbar-container .navbar-brand {
@@ -61,7 +61,8 @@
 }
 
 .navbar-input{
-    border-radius: 1.25rem;
+    border-top-right-radius: 0!important;
+    border-bottom-right-radius: 0!important;
 }
 
 .button-submit{

@@ -8,6 +8,7 @@ import Navbar from "react-bootstrap/Navbar";
 import {Button, FormControl, InputGroup} from "react-bootstrap";
 import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import Image from "react-bootstrap/Image";
 
 
 function NavBar() {
@@ -29,7 +30,7 @@ function NavBar() {
                                 placeholder="Rechercher"
                                 aria-label="Rechercher"
                                 aria-describedby="basic-addon2"
-                                className="navbar-input"
+                                className="navbar-input rounded-pill"
                             />
                             <InputGroup.Append className="inputgroup">
                                 <Button type="submit"
@@ -45,7 +46,7 @@ function NavBar() {
 
                         <NavDropdown id="basic-nav-dropdown" alignRight title={
                             <div className="pull-left d-flex align-items-center">
-                                <img className="avatar rounded-circle z-depth-2"
+                                <Image className="avatar rounded-circle z-depth-2"
                                      src={avatar}
                                      alt="user pic"
                                 />

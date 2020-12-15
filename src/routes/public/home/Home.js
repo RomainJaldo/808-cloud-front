@@ -1,26 +1,59 @@
 import './Home.css';
 import React from "react";
-import {Link} from "react-router-dom";
 import NavBar from "../layout/Navbar";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import {Button} from "react-bootstrap";
 import background from "../../../assets/img/istockphoto-1168734599-640x640.jpg";
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import Image from "react-bootstrap/Image";
-import Card from "react-bootstrap/Card";
+import CardItem from "./CardItem";
+import CardBeat from "./CardBeat";
 
 function Home() {
+    const item1 = {
+        background: background,
+        title: "Hip Hop",
+        url: "#/"
+    }
+    const item2 = {
+        background: background,
+        title: "Pop",
+        url: "#/"
+    }
+    const item3 = {
+        background: background,
+        title: "Drill",
+        url: "#/"
+    }
+    const item4 = {
+        background: background,
+        title: "Trap",
+        url: "#/"
+    }
+    const item5 = {
+        background: background,
+        title: "Afro Trap",
+        url: "#/"
+    }
+    const items = [
+        item1,
+        item2,
+        item3,
+        item4,
+        item5
+    ]
+    const listItems = items.map((item) =>
+        <CardItem item={item}/>
+    );
+
     return (
         <Container fluid className="Home p-0">
-            <Row className="">
+            <Row noGutters className="">
                 <Col><NavBar/></Col>
             </Row>
-            <Row style={{marginBottom: "6em"}}>
+            <Row noGutters style={{marginBottom: "6em",marginTop: "3em"}}>
                 <Col className="d-flex justify-content-center">
-
                     <Carousel
                         additionalTransfrom={0}
                         arrows
@@ -43,7 +76,7 @@ function Home() {
                                     max: 3000,
                                     min: 1024
                                 },
-                                items: 3,
+                                items: 4,
                                 partialVisibilityGutter: 40
                             },
                             mobile: {
@@ -68,48 +101,25 @@ function Home() {
                         slidesToSlide={1}
                         swipeable
                     >
-                        <Link to="#/">
-                            <Card className="bg-transparent text-white card-swipe border-0">
-                                <Card.Img className="img-swipe" src={background} alt="Card image"/>
-                                <Card.ImgOverlay
-                                    className="d-flex text-center align-items-center justify-content-center overlay-image">
-                                    <Card.Title><h2>Hip Hop</h2></Card.Title>
-                                </Card.ImgOverlay>
-                            </Card>
-                        </Link>
-                        <Link to="#/">
-                            <Card className="bg-transparent text-white card-swipe border-0">
-                                <Card.Img className="img-swipe" src={background} alt="Card image"/>
-                                <Card.ImgOverlay
-                                    className="d-flex text-center align-items-center justify-content-center overlay-image">
-                                    <Card.Title><h2>Pop</h2></Card.Title>
-                                </Card.ImgOverlay>
-                            </Card>
-                        </Link>
-                        <Link to="#/">
-                            <Card className="bg-transparent text-white card-swipe border-0">
-                                <Card.Img className="img-swipe" src={background} alt="Card image"/>
-                                <Card.ImgOverlay
-                                    className="d-flex text-center align-items-center justify-content-center overlay-image">
-                                    <Card.Title><h2>Trap</h2></Card.Title>
-                                </Card.ImgOverlay>
-                            </Card>
-                        </Link>
-                        <Link to="#/">
-                            <Card className="bg-transparent text-white card-swipe border-0">
-                                <Card.Img className="img-swipe" src={background} alt="Card image"/>
-                                <Card.ImgOverlay
-                                    className="d-flex text-center align-items-center justify-content-center overlay-image">
-                                    <Card.Title><h2>Drill</h2></Card.Title>
-                                </Card.ImgOverlay>
-                            </Card>
-                        </Link>
+                        {listItems}
                     </Carousel>
                 </Col>
             </Row>
-            <Row>
-                <Col className="d-flex justify-content-center">
-                    Content
+            <Row noGutters>
+                <Col className="d-flex justify-content-center flex-column align-items-center">
+                    <Row>
+                        <Col><CardBeat/></Col>
+                        <Col><CardBeat/></Col>
+                    </Row>
+                    <Row>
+                        <Col><CardBeat/></Col>
+                        <Col><CardBeat/></Col>
+                    </Row>
+                </Col>
+            </Row>
+            <Row noGutters>
+                <Col className="d-flex justify-content-center flex-column align-items-center">
+                    <h2>PLAYER</h2>
                 </Col>
             </Row>
         </Container>
