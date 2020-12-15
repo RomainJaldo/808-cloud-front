@@ -1,0 +1,15 @@
+.carousel-container{
+    width: 75%;
+}
+
+.overlay-image{
+    font-family: 'Bebas Neue', cursive;
+}
+
+.card-swipe{
+    margin: 0 20px;
+}
+
+.img-swipe {
+    border-radius: 5em;
+}

@@ -17,7 +17,7 @@ function NavBar() {
             <Navbar expand="lg" className="navbar-container w-100">
                 <Navbar.Brand href="/" className="navbar-brand">
                     <img className="logo-pic" alt="logo" src={logo}/>
-                    <h2 className="text-white brand">808 CLOUD</h2>
+                    <h1 className="text-white brand">808 CLOUD</h1>
                 </Navbar.Brand>
 
                 <Navbar.Collapse id="basic-navbar-nav">
