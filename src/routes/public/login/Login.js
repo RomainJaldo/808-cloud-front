@@ -7,6 +7,7 @@ import Card from "react-bootstrap/cjs/Card";
 import Button from "react-bootstrap/cjs/Button";
 import Form from "react-bootstrap/cjs/Form";
 import {Link} from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 import authService from '../../../services/auth.service';
 
@@ -15,10 +16,19 @@ export default class Login extends React.Component {
         super(props);
         this.state = {
             email: "",
-            password: ""
+            password: "",
+            redirect: false
         };
 
         this.handleInputChange = this.handleInputChange.bind(this);
+    }
+
+    componentDidMount() {
+        let token = localStorage.getItem('token');
+
+        if ( token ) {
+            this.setState({ redirection: true });
+        }
     }
 
     handleInputChange(event) {
@@ -41,11 +51,15 @@ export default class Login extends React.Component {
         authService.login(user)
             .then(res => {
                 console.log(res);
-                console.log(res.data);
+                this.setState({ redirection: true })
             })
     }
 
     render() {
+        const { redirection } = this.state;
+        if (redirection) {
+            return <Redirect to="/profile" />
+        }
         return (
             <main>
                 <Container>

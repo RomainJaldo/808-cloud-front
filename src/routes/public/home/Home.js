@@ -9,6 +9,7 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import CardItem from "./CardItem";
 import CardBeat from "./CardBeat";
+import Player from "../layout/Player";
 
 function Home() {
     const item1 = {
@@ -119,7 +120,7 @@ function Home() {
             </Row>
             <Row noGutters>
                 <Col className="d-flex justify-content-center flex-column align-items-center">
-                    <h2>PLAYER</h2>
+                    <Player/>
                 </Col>
             </Row>
         </Container>

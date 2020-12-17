@@ -3,11 +3,11 @@ import axios from 'axios';
 export default function setup() {
     axios.interceptors.request.use(
         config => {
-            let user = store.state.auth.user;
+            let token = localStorage.getItem('token');
 
-            if (user && user.token) {
+            if (token) {
                 config.headers = {
-                    Authorization: `Bearer ${user.token}`
+                    Authorization: `Bearer ${token}`
                 };
 
             } else {
@@ -39,38 +39,17 @@ export default function setup() {
                         break;
 
                     case 401:
-                        store.dispatch('auth/logout').then(
-                            () => {
-                                router.push('/login');
-                            },
-                            error => {
-                                this.loading = false;
-                                this.message =
-                                    (error.response && error.response.data) ||
-                                    error.message ||
-                                    error.toString();
-                            }
-                        );
+                        // Return to login page + Error message
 
                         break;
                     case 403:
-                        router.replace({
-                            path: "/login",
-                            query: { redirect: router.currentRoute.fullPath }
-                        });
+                        // Return to login page + Error message
                         break;
                     case 404:
                         alert('page not exist');
                         break;
                     case 502:
-                        setTimeout(() => {
-                            router.replace({
-                                path: "/login",
-                                query: {
-                                    redirect: router.currentRoute.fullPath
-                                }
-                            });
-                        }, 1000);
+                    // Error message
                 }
                 return Promise.reject(error.response);
             }

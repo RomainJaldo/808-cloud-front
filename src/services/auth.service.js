@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:8000/api/';
+const API_URL = process.env.REACT_APP_API;
 
 class AuthService {
     login(form) {
@@ -11,7 +11,7 @@ class AuthService {
             })
             .then(response => {
                 if (response.data.token) {
-                    localStorage.setItem('user', JSON.stringify(response.data));
+                    localStorage.setItem('token', response.data.token);
                 }
 
                 return response.data;
