@@ -1,22 +1,59 @@
-.NavBar {
-    display: flex;
-    background: #7244A0;
-    justify-content: space-around;
+.carousel-container{
+    width: 75%;
 }
 
-.navbar-logo{
-    display: flex;
+.overlay-image{
+    font-family: 'Bebas Neue', cursive;
 }
 
-.logo {
-    height: 80px;
+.card-swipe{
+    margin: 0 20px;
 }
 
-.avatar {
-    height: 80px;
+.img-swipe {
+    border-radius: 5em;
+    -webkit-filter: blur(1px);
+    filter: blur(1px);
 }
 
-.PopupProfile {
-    display: none;
-    flex-direction: column;
+.card-beat {
+    background-color: #3D3D3D;
+}
+
+.play{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+}
+
+.button-minus{
+    font-size: 2em;
+    font-weight: 700;
+    color: #6e2fa8;
+}
+
+.button-plus{
+    font-size: 2em;
+    font-weight: 700;
+}
+
+.bg-purple{
+    background-color: #6e2fa8;
+}
+
+.bg-purple:hover, .bg-purple:focus{
+    color: #fff;
+    background-color: #6e2fa8;
+}
+
+.buttons-comment .btn-primary:not(:disabled):not(.disabled).active, .buttons-comment .btn-primary:not(:disabled):not(.disabled):active{
+    color: #fff;
+    background-color: #6e2fa8;
+}
+
+.number-burns{
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.5em;
 }

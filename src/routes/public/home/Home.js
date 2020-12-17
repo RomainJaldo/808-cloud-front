@@ -1,77 +1,128 @@
 import './Home.css';
-import {Button} from '@material-ui/core';
 import React from "react";
-import {Link} from "react-router-dom";
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faPlus, faUser, faFireAlt, faPowerOff, faSearch} from '@fortawesome/free-solid-svg-icons';
-import logo from '../../../imgs/808cloud-white.png';
-import avatar from '../../../imgs/profilepicture.png';
-
+import NavBar from "../layout/Navbar";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import background from "../../../assets/img/istockphoto-1168734599-640x640.jpg";
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
+import CardItem from "./CardItem";
+import CardBeat from "./CardBeat";
 
 function Home() {
-    return (
-        <div className="Home">
-            <NavBar/>
-            <Link to={`/login`}>Login</Link>
-            <Link to={`/`}>Home</Link>
-            HOME
-        </div>
+    const item1 = {
+        background: background,
+        title: "Hip Hop",
+        url: "#/"
+    }
+    const item2 = {
+        background: background,
+        title: "Pop",
+        url: "#/"
+    }
+    const item3 = {
+        background: background,
+        title: "Drill",
+        url: "#/"
+    }
+    const item4 = {
+        background: background,
+        title: "Trap",
+        url: "#/"
+    }
+    const item5 = {
+        background: background,
+        title: "Afro Trap",
+        url: "#/"
+    }
+    const items = [
+        item1,
+        item2,
+        item3,
+        item4,
+        item5
+    ]
+    const listItems = items.map((item) =>
+        <CardItem item={item}/>
     );
-}
 
-function NavBar() {
     return (
-        <div className="NavBar">
-            <div className="navbar-logo">
-                <Link to={`/`}>
-                    <img className="logo" alt="logo" src={logo}/>
-                </Link>
-                <div>808Cloud</div>
-            </div>
-            <Searchbar/>
-            <AddBeats/>
-            <div className="ProfilePicture">
-                <ProfilePicture/>
-                <PopupProfile/>
-            </div>
-        </div>
-    );
-}
-
-function Searchbar() {
-    return (
-        <div className="Searchbar">
-            <form action="">
-                <input type="text" placeholder="Rechercher.." name="search"/>
-                <button type="submit"><FontAwesomeIcon icon={faSearch}/></button>
-            </form>
-        </div>
-    );
-}
-
-function AddBeats() {
-    return (
-        <div className="AddBeats">
-            <FontAwesomeIcon icon={faPlus}/>
-        </div>
-    );
-}
-
-function ProfilePicture() {
-    return (
-        <div className="ProfilePicture">
-            <img className="avatar" alt="profilepicture" src={avatar}/>
-        </div>
-    );
-}
-
-function PopupProfile() {
-    return (
-        <div className="PopupProfile">
-            <div className="myprofile"><FontAwesomeIcon icon={faUser}/><p>Mon profil</p></div>
-            <div className="mybeats"><FontAwesomeIcon icon={faFireAlt}/><p>Mes beats</p></div>
-            <div className="logout"><FontAwesomeIcon icon={faPowerOff}/><p>Déconnexion</p></div>
-        </div>
+        <Container fluid className="Home p-0">
+            <Row noGutters className="">
+                <Col><NavBar/></Col>
+            </Row>
+            <Row noGutters style={{marginBottom: "6em",marginTop: "3em"}}>
+                <Col className="d-flex justify-content-center">
+                    <Carousel
+                        additionalTransfrom={0}
+                        arrows
+                        autoPlaySpeed={3000}
+                        centerMode={false}
+                        className=""
+                        containerClass="carousel-container"
+                        dotListClass=""
+                        draggable
+                        focusOnSelect={false}
+                        infinite
+                        itemClass=""
+                        keyBoardControl
+                        minimumTouchDrag={80}
+                        renderButtonGroupOutside={false}
+                        renderDotsOutside={false}
+                        responsive={{
+                            desktop: {
+                                breakpoint: {
+                                    max: 3000,
+                                    min: 1024
+                                },
+                                items: 4,
+                                partialVisibilityGutter: 40
+                            },
+                            mobile: {
+                                breakpoint: {
+                                    max: 464,
+                                    min: 0
+                                },
+                                items: 1,
+                                partialVisibilityGutter: 30
+                            },
+                            tablet: {
+                                breakpoint: {
+                                    max: 1024,
+                                    min: 464
+                                },
+                                items: 2,
+                                partialVisibilityGutter: 30
+                            }
+                        }}
+                        showDots={false}
+                        sliderClass=""
+                        slidesToSlide={1}
+                        swipeable
+                    >
+                        {listItems}
+                    </Carousel>
+                </Col>
+            </Row>
+            <Row noGutters>
+                <Col className="d-flex justify-content-center flex-column align-items-center">
+                    <Row>
+                        <Col><CardBeat/></Col>
+                        <Col><CardBeat/></Col>
+                    </Row>
+                    <Row>
+                        <Col><CardBeat/></Col>
+                        <Col><CardBeat/></Col>
+                    </Row>
+                </Col>
+            </Row>
+            <Row noGutters>
+                <Col className="d-flex justify-content-center flex-column align-items-center">
+                    <h2>PLAYER</h2>
+                </Col>
+            </Row>
+        </Container>
     );
 }
 
