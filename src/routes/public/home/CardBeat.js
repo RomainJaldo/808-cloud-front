@@ -29,8 +29,8 @@ function CardBeat({item}) {
                         <Container className="p-0 h-100 d-flex flex-column justify-content-between">
                             <Row noGutters className="d-flex justify-content-center align-items-center">
                                 <Col className="d-flex col-8 justify-content-around bg-dark rounded">
+                                    <Button className="bg-transparent border-0 shadow-none button-plus">+</Button>
                                     <Button className="bg-transparent border-0 shadow-none button-minus">-</Button>
-                                    <Button className="bg-transparent border-0 shadow-none button-plus text-white">+</Button>
                                 </Col>
                                 <Col className="col-4 d-flex align-items-center justify-content-end number-burns">
                                     <span className="mr-1">80</span>
