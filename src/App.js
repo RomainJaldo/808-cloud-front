@@ -11,6 +11,7 @@ import {Button} from '@material-ui/core';
 import Home from "./routes/public/home/Home";
 import Login from "./routes/public/login/Login";
 import Register from "./routes/public/register/Register";
+import Profile from "./routes/public/profile/Profile";
 
 function App() {
     return (
@@ -20,6 +21,7 @@ function App() {
                     <Route exact path={"/"} component={() => <Home/>}/>
                     <Route exact path={"/login"} component={() => <Login/>}/>
                     <Route exact path={"/register"} component={() => <Register/>}/>
+                    <Route exact path={"/profile"} component={() => <Profile/>}/>
                 </Switch>
             </div>
         </Router>
