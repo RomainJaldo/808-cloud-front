@@ -29,7 +29,9 @@ function Home() {
             // },
             tags : ['Chill', "Dance"],
             urlProfile : "#/",
+            urlAvatar : "https://www.cregybad.org/wp-content/uploads/2017/10/user.png",
             burns : 80,
+            comments : 13,
         },
         {
             name: 'Dorost Nemisham',
@@ -40,7 +42,9 @@ function Home() {
                 'https://res.cloudinary.com/ehsanahmadi/video/upload/v1573550770/Sirvan-Khosravi-Dorost-Nemisham-128_kb8urq.mp3',
             tags : ['Drill', "Trap"],
             urlProfile : "#/",
+            urlAvatar : "https://www.cregybad.org/wp-content/uploads/2017/10/user.png",
             burns : 12,
+            comments : 105,
         },
         {
             name: 'Bedtime Stories',
@@ -51,7 +55,9 @@ function Home() {
                 'http://res.cloudinary.com/alick/video/upload/v1502375674/Bedtime_Stories.mp3',
             tags : ['Hip Hop', "Pop"],
             urlProfile : "#/",
+            urlAvatar : "https://www.cregybad.org/wp-content/uploads/2017/10/user.png",
             burns : 120,
+            comments : 100,
         },
         {
             name: "Spark",
@@ -60,7 +66,9 @@ function Home() {
             musicSrc: `https://www.auboutdufil.com/get.php?web=https://archive.org/download/vexento-spark/Vexento-Spark.mp3`,
             tags : ['Pop', "Dance"],
             urlProfile : "#/",
+            urlAvatar : "https://www.cregybad.org/wp-content/uploads/2017/10/user.png",
             burns : 15,
+            comments : 10,
         },
     ]
 
@@ -101,7 +109,7 @@ function Home() {
     );
     const listBeats = audioList1.map((beat) =>
         <Col
-            className="d-flex justify-content-center flex-column align-items-center mr-md-3 col-md-5 col-12"><CardBeat
+            className="d-flex justify-content-center flex-column align-items-center m-md-3 col-md-5 col-12"><CardBeat
             beat={beat} key={beat}
             playBeat={playBeat}/></Col>
     );

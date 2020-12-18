@@ -48,30 +48,33 @@ function CardBeat({playBeat, beat}) {
                             </Row>
                             <Row>
                                 <Col>
-                                    <Card.Title>{beat.name}</Card.Title>
+                                    <Card.Title className="text-center text-md-left">{beat.name}</Card.Title>
                                 </Col>
                             </Row>
                             <Row className="mb-3 mb-lg-0">
-                                <Col className="d-flex align-items-center">
+                                <Col className="d-flex align-items-center justify-content-md-start justify-content-center">
                                     {listTags}
                                 </Col>
                             </Row>
                             <Row>
                                 <Col className="d-flex col-8 p-0 align-items-center">
                                     <Link to={beat.urlProfile} className="d-flex text-decoration-none">
-                                    <span className="col-4">
+                                    <span className="col-4 m-auto">
                                         <Image fluid className="rounded-circle"
-                                               src={avatar}
+                                               src={beat.urlAvatar}
                                                alt="user pic"
                                         />
                                     </span>
-                                        <span className="col-8 p-0 text-white">{beat.singer}</span>
+                                        <span className="col-8 p-0 text-white m-auto">
+                                            {beat.singer}
+                                        </span>
                                     </Link>
                                 </Col>
                                 <Col
                                     className="d-flex col-4 p-0 align-items-center justify-content-end buttons-comment">
-                                    <Button className="d-flex justify-content-around w-100 bg-purple border-0">
-                                        <span>19</span>
+                                    <Button
+                                        className="d-flex justify-content-around w-100 bg-purple border-0 pl-0 pr-0">
+                                        <span>{beat.comments}</span>
                                         <span><FontAwesomeIcon icon={faCommentAlt}/></span>
                                     </Button>
                                 </Col>
