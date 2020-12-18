@@ -1,0 +1,31 @@
+.progress-bar {
+    background-color: transparent;
+}
+
+.react-jinke-music-player-main .react-jinke-music-player-mobile {
+    z-index: 150;
+}
+
+.react-jinke-music-player-main .music-player-panel .panel-content .rc-slider-handle, .react-jinke-music-player-main .music-player-panel .panel-content .rc-slider-track {
+    background-color: #8437C7
+}
+
+.react-jinke-music-player-main svg:active, .react-jinke-music-player-main svg:hover {
+    color: #8437C7;
+}
+
+.react-jinke-music-player .music-player-controller {
+    color: #8437C7;
+}
+
+.react-jinke-music-player .music-player-controller .music-player-controller-setting {
+    background: #8437c745;
+}
+
+.audio-lists-panel-content .audio-item.playing, .audio-lists-panel-content .audio-item.playing svg {
+    color: #8437C7;
+}
+
+.react-jinke-music-player-mobile-progress .rc-slider-handle, .react-jinke-music-player-mobile-progress .rc-slider-track {
+    background-color: #8437C7
+}

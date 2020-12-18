@@ -3,7 +3,7 @@
     padding: 0.5rem 2.5rem;
 }
 
-.oval{
+.oval {
     position: fixed;
     width: 110%;
     height: 600px;
@@ -13,13 +13,23 @@
     border-radius: 40%;
 }
 
+@media screen and (max-width: 640px) {
+    .oval {
+        position: fixed;
+        width: 120%;
+        height: 500px;
+        left: -10%;
+        top: -276px;
+    }
+}
+
 .navbar-container .navbar-brand {
     display: flex;
     align-items: center;
     font-family: 'Bebas Neue', cursive;
 }
 
-.navbar-container .brand{
+.navbar-container .brand {
     margin: auto auto auto 1em;
 }
 
@@ -31,11 +41,11 @@
     height: 80px;
 }
 
-.input-group .form-control{
+.input-group .form-control {
     width: 25em;
 }
 
-.actions{
+.actions {
     margin-left: 1em;
     font-family: 'Bebas Neue', cursive;
 }
@@ -60,19 +70,19 @@
     display: none;
 }
 
-.navbar-input{
-    border-top-right-radius: 0!important;
-    border-bottom-right-radius: 0!important;
+.navbar-input {
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
 }
 
-.button-submit{
+.button-submit {
     background-color: white;
     border: 1px solid #ced4da;
     border-left: none;
     color: #495057;
 }
 
-.inputgroup .btn-primary:not(:disabled):not(.disabled).active, .input-group .btn-primary:not(:disabled):not(.disabled):active{
+.inputgroup .btn-primary:not(:disabled):not(.disabled).active, .input-group .btn-primary:not(:disabled):not(.disabled):active {
     color: #7244A0;
     background-color: white;
     border: 1px solid #ced4da;
@@ -80,19 +90,19 @@
 }
 
 .button-submit:focus,
-.button-submit:hover{
+.button-submit:hover {
     color: #7244A0;
     background-color: white;
     border: 1px solid #ced4da;
     border-left: none;
 }
 
-.button-upload{
+.button-upload {
     background-color: black;
 }
 
 .button-upload:focus,
-.button-upload:hover{
+.button-upload:hover {
     color: #7244A0;
     background-color: #212529;
     border: 1px solid #212529;
@@ -100,7 +110,7 @@
     box-shadow: none !important;
 }
 
-.link-button .btn-primary:not(:disabled):not(.disabled).active, .link-button .btn-primary:not(:disabled):not(.disabled):active{
+.link-button .btn-primary:not(:disabled):not(.disabled).active, .link-button .btn-primary:not(:disabled):not(.disabled):active {
     color: #7244A0;
     background-color: #212529;
     border: 1px solid #212529;

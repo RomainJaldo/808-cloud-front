@@ -10,6 +10,30 @@ import 'react-multi-carousel/lib/styles.css';
 import CardItem from "./CardItem";
 import CardBeat from "./CardBeat";
 import Player from "../layout/Player";
+import ReactJkMusicPlayer from 'react-jinke-music-player'
+
+let audioList1 = [
+    {
+        name: 'Despacito',
+        singer: 'Luis Fonsi',
+        cover:
+            'http://res.cloudinary.com/alick/image/upload/v1502689731/Despacito_uvolhp.jpg',
+        musicSrc:
+            'http://res.cloudinary.com/alick/video/upload/v1502689683/Luis_Fonsi_-_Despacito_ft._Daddy_Yankee_uyvqw9.mp3',
+        // support async fetch music src. eg.
+        // musicSrc: async () => {
+        //   return await fetch('/api')
+        // },
+    },
+    {
+        name: 'Dorost Nemisham',
+        singer: 'Sirvan Khosravi',
+        cover:
+            'https://res.cloudinary.com/ehsanahmadi/image/upload/v1573758778/Sirvan-Khosravi-Dorost-Nemisham_glicks.jpg',
+        musicSrc:
+            'https://res.cloudinary.com/ehsanahmadi/video/upload/v1573550770/Sirvan-Khosravi-Dorost-Nemisham-128_kb8urq.mp3',
+    },
+]
 
 function Home() {
     const item1 = {
@@ -45,15 +69,19 @@ function Home() {
         item5
     ]
     const listItems = items.map((item) =>
-        <CardItem item={item}/>
+        <CardItem item={item} key={item}/>
     );
 
+    function playBeat() {
+        console.log("play")
+    }
+
     return (
-        <Container fluid className="Home p-0">
+        <Container fluid className="Home p-0" style={{marginBottom: "6em"}}>
             <Row noGutters className="">
                 <Col><NavBar/></Col>
             </Row>
-            <Row noGutters style={{marginBottom: "6em",marginTop: "3em"}}>
+            <Row noGutters style={{marginBottom: "6em", marginTop: "3em"}}>
                 <Col className="d-flex justify-content-center">
                     <Carousel
                         additionalTransfrom={0}
@@ -106,21 +134,24 @@ function Home() {
                     </Carousel>
                 </Col>
             </Row>
-            <Row noGutters>
-                <Col className="d-flex justify-content-center flex-column align-items-center">
-                    <Row>
-                        <Col><CardBeat/></Col>
-                        <Col><CardBeat/></Col>
-                    </Row>
-                    <Row>
-                        <Col><CardBeat/></Col>
-                        <Col><CardBeat/></Col>
-                    </Row>
-                </Col>
+            <Row noGutters className="d-flex flex-column justify-content-center align-items-center">
+                <Row noGutters className="d-flex flex-md-row flex-column justify-content-center w-75">
+                    <Col
+                        className="d-flex justify-content-center flex-column align-items-center mr-md-3 col-md-5 col-12"><CardBeat playBeat={playBeat}/></Col>
+                    <Col
+                        className="d-flex justify-content-center flex-column align-items-center col-md-5 col-12"><CardBeat/></Col>
+                </Row>
+                <Row noGutters className="d-flex flex-md-row flex-column justify-content-center w-75">
+                    <Col
+                        className="d-flex justify-content-center flex-column align-items-center mr-md-3 col-md-5 col-12"><CardBeat/></Col>
+                    <Col
+                        className="d-flex justify-content-center flex-column align-items-center col-md-5 col-12"><CardBeat/></Col>
+                </Row>
+
             </Row>
             <Row noGutters>
                 <Col className="d-flex justify-content-center flex-column align-items-center">
-                    <Player/>
+                    <Player audio={audioList1}/>
                 </Col>
             </Row>
         </Container>
