@@ -73,27 +73,27 @@ function Home() {
     ]
 
     const item1 = {
-        background: background,
+        background: "https://images.pexels.com/photos/1370545/pexels-photo-1370545.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
         title: "Hip Hop",
         url: "#/"
     }
     const item2 = {
-        background: background,
+        background: "https://cdn.wallpapersafari.com/53/42/TM5I8G.jpg",
         title: "Pop",
         url: "#/"
     }
     const item3 = {
-        background: background,
+        background: "https://thisisukrap.com/wp-content/uploads/2020/06/ZONE-2-730x450.jpg",
         title: "Drill",
         url: "#/"
     }
     const item4 = {
-        background: background,
+        background: "https://wallpapercave.com/wp/wp2023799.png",
         title: "Trap",
         url: "#/"
     }
     const item5 = {
-        background: background,
+        background: "https://wallpapercave.com/wp/wp4058575.jpg",
         title: "Afro Trap",
         url: "#/"
     }

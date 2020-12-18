@@ -20,11 +20,11 @@ function NavBar() {
                     <Image fluid className="logo-pic" alt="logo" src={logo}/>
                     <h1 className="text-white brand d-sm-flex d-none">808 CLOUD</h1>
                 </Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
                     </Nav>
-                    <Nav className="">
+                    <Nav className="align-items-center">
                         <InputGroup className="d-flex align-items-center w-auto">
                             <FormControl
                                 type="text"

@@ -16,6 +16,10 @@
     filter: blur(1px);
 }
 
+.img-swipe:hover,.img-swipe:active,.img-swipe:focus{
+    filter: blur(2px);
+}
+
 .card-beat {
     background-color: #3D3D3D;
 }
