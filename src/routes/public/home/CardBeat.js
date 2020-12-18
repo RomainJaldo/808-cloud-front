@@ -9,14 +9,21 @@ import {faFireAlt, faPlus, faMinus, faCommentAlt, faPlayCircle} from "@fortaweso
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import Image from "react-bootstrap/Image";
 import {Link} from "react-router-dom";
+import CardItem from "./CardItem";
 
-function CardBeat({playBeat,beat}) {
+function CardBeat({playBeat, beat}) {
+    const listTags = beat.tags.map((item) =>
+        <Link to="#/" className="d-flex text-decoration-none">
+            <Button
+                className="bg-light border-0 shadow-none rounded-pill p-1 text-dark mr-1">{item}</Button>
+        </Link>
+    );
     return (
         <Card className="mb-3 card-beat">
             <Row noGutters className="p-4 flex-lg-row flex-column">
                 <Col className="mb-3 mb-lg-0 ">
                     <Card.Img fluid
-                              src={cover}
+                              src={beat.cover}
                               alt="Card image"
                               aria-label="Placeholder: Image"/>
                     <Button className="play bg-transparent border-0 shadow-none" onClick={playBeat}>
@@ -35,38 +42,30 @@ function CardBeat({playBeat,beat}) {
                                         icon={faMinus}/></Button>
                                 </Col>
                                 <Col className="col-4 d-flex align-items-center justify-content-end number-burns">
-                                    <span className="mr-1">80</span>
+                                    <span className="mr-1">{beat.burns}</span>
                                     <FontAwesomeIcon icon={faFireAlt}/>
                                 </Col>
                             </Row>
                             <Row>
                                 <Col>
-                                    <Card.Title>Instrumental Linkin Park</Card.Title>
+                                    <Card.Title>{beat.name}</Card.Title>
                                 </Col>
                             </Row>
                             <Row className="mb-3 mb-lg-0">
                                 <Col className="d-flex align-items-center">
-                                    <Link to="#/" className="d-flex text-decoration-none">
-                                        <Button
-                                            className="bg-light border-0 shadow-none rounded-pill p-1 text-dark mr-1">Hard
-                                            Rock</Button>
-                                    </Link>
-                                    <Link to="#/" className="d-flex text-decoration-none">
-                                        <Button
-                                            className="bg-light border-0 shadow-none rounded-pill p-1 text-dark">Chill</Button>
-                                    </Link>
+                                    {listTags}
                                 </Col>
                             </Row>
                             <Row>
                                 <Col className="d-flex col-8 p-0 align-items-center">
-                                    <Link to="#/" className="d-flex text-decoration-none">
+                                    <Link to={beat.urlProfile} className="d-flex text-decoration-none">
                                     <span className="col-4">
                                         <Image fluid className="rounded-circle"
                                                src={avatar}
                                                alt="user pic"
                                         />
                                     </span>
-                                        <span className="col-8 p-0 text-white">John Doe</span>
+                                        <span className="col-8 p-0 text-white">{beat.singer}</span>
                                     </Link>
                                 </Col>
                                 <Col

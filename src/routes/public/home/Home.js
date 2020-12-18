@@ -12,30 +12,58 @@ import CardBeat from "./CardBeat";
 import Player from "../layout/Player";
 import ReactJkMusicPlayer from 'react-jinke-music-player'
 
-let audioList1 = [
-    {
-        name: 'Despacito',
-        singer: 'Luis Fonsi',
-        cover:
-            'http://res.cloudinary.com/alick/image/upload/v1502689731/Despacito_uvolhp.jpg',
-        musicSrc:
-            'http://res.cloudinary.com/alick/video/upload/v1502689683/Luis_Fonsi_-_Despacito_ft._Daddy_Yankee_uyvqw9.mp3',
-        // support async fetch music src. eg.
-        // musicSrc: async () => {
-        //   return await fetch('/api')
-        // },
-    },
-    {
-        name: 'Dorost Nemisham',
-        singer: 'Sirvan Khosravi',
-        cover:
-            'https://res.cloudinary.com/ehsanahmadi/image/upload/v1573758778/Sirvan-Khosravi-Dorost-Nemisham_glicks.jpg',
-        musicSrc:
-            'https://res.cloudinary.com/ehsanahmadi/video/upload/v1573550770/Sirvan-Khosravi-Dorost-Nemisham-128_kb8urq.mp3',
-    },
-]
-
 function Home() {
+
+    let audioList1 = [
+        {
+            id :1,
+            name: 'Despacito',
+            singer: 'Luis Fonsi',
+            cover:
+                'http://res.cloudinary.com/alick/image/upload/v1502689731/Despacito_uvolhp.jpg',
+            musicSrc:
+                'http://res.cloudinary.com/alick/video/upload/v1502689683/Luis_Fonsi_-_Despacito_ft._Daddy_Yankee_uyvqw9.mp3',
+            // support async fetch music src. eg.
+            // musicSrc: async () => {
+            //   return await fetch('/api')
+            // },
+            tags : ['Chill', "Dance"],
+            urlProfile : "#/",
+            burns : 80,
+        },
+        {
+            name: 'Dorost Nemisham',
+            singer: 'Sirvan Khosravi',
+            cover:
+                'https://res.cloudinary.com/ehsanahmadi/image/upload/v1573758778/Sirvan-Khosravi-Dorost-Nemisham_glicks.jpg',
+            musicSrc:
+                'https://res.cloudinary.com/ehsanahmadi/video/upload/v1573550770/Sirvan-Khosravi-Dorost-Nemisham-128_kb8urq.mp3',
+            tags : ['Drill', "Trap"],
+            urlProfile : "#/",
+            burns : 12,
+        },
+        {
+            name: 'Bedtime Stories',
+            singer: 'Jay Chou',
+            cover:
+                'http://res.cloudinary.com/alick/image/upload/v1502375978/bedtime_stories_bywggz.jpg',
+            musicSrc:
+                'http://res.cloudinary.com/alick/video/upload/v1502375674/Bedtime_Stories.mp3',
+            tags : ['Hip Hop', "Pop"],
+            urlProfile : "#/",
+            burns : 120,
+        },
+        {
+            name: "Spark",
+            singer: 'Vexento',
+            cover: 'https://img.pngio.com/i-need-jesus-fan-made-cover-art-xxxtentacion-cover-art-png-3000_3000.png',
+            musicSrc: `https://www.auboutdufil.com/get.php?web=https://archive.org/download/vexento-spark/Vexento-Spark.mp3`,
+            tags : ['Pop', "Dance"],
+            urlProfile : "#/",
+            burns : 15,
+        },
+    ]
+
     const item1 = {
         background: background,
         title: "Hip Hop",
@@ -70,6 +98,12 @@ function Home() {
     ]
     const listItems = items.map((item) =>
         <CardItem item={item} key={item}/>
+    );
+    const listBeats = audioList1.map((beat) =>
+        <Col
+            className="d-flex justify-content-center flex-column align-items-center mr-md-3 col-md-5 col-12"><CardBeat
+            beat={beat} key={beat}
+            playBeat={playBeat}/></Col>
     );
 
     function playBeat() {
@@ -136,18 +170,8 @@ function Home() {
             </Row>
             <Row noGutters className="d-flex flex-column justify-content-center align-items-center">
                 <Row noGutters className="d-flex flex-md-row flex-column justify-content-center w-75">
-                    <Col
-                        className="d-flex justify-content-center flex-column align-items-center mr-md-3 col-md-5 col-12"><CardBeat playBeat={playBeat}/></Col>
-                    <Col
-                        className="d-flex justify-content-center flex-column align-items-center col-md-5 col-12"><CardBeat/></Col>
+                    {listBeats}
                 </Row>
-                <Row noGutters className="d-flex flex-md-row flex-column justify-content-center w-75">
-                    <Col
-                        className="d-flex justify-content-center flex-column align-items-center mr-md-3 col-md-5 col-12"><CardBeat/></Col>
-                    <Col
-                        className="d-flex justify-content-center flex-column align-items-center col-md-5 col-12"><CardBeat/></Col>
-                </Row>
-
             </Row>
             <Row noGutters>
                 <Col className="d-flex justify-content-center flex-column align-items-center">
