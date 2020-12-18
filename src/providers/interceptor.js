@@ -1,13 +1,15 @@
 import axios from 'axios';
+import {Redirect} from "react-router-dom";
+import React from "react";
 
 export default function setup() {
     axios.interceptors.request.use(
         config => {
-            let token = localStorage.getItem('token');
+            let user = JSON.parse(localStorage.getItem('user'));
 
-            if (token) {
+            if (user && user.token) {
                 config.headers = {
-                    Authorization: `Bearer ${token}`
+                    Authorization: `Bearer ${user.token}`
                 };
 
             } else {
@@ -34,16 +36,18 @@ export default function setup() {
             if (error.response.status) {
                 switch (error.response.status) {
                     case 400:
-
+                        console.log(error.response)
+                        alert(error.response.data)
                         //do something
                         break;
 
                     case 401:
                         // Return to login page + Error message
-
+                        alert('Veuillez vous connecter')
+                        localStorage.removeItem('user');
                         break;
                     case 403:
-                        // Return to login page + Error message
+                        return <Redirect to="/login" />
                         break;
                     case 404:
                         alert('page not exist');

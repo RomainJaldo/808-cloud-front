@@ -16,8 +16,15 @@ import Profile from "./routes/public/profile/Profile";
 function App() {
     //Si connecté loggedIn = true et renvoie vers l'accueil sinon affiche le login
     let loggedIn = true;
+    let user = JSON.parse(localStorage.getItem('user'));
+
+    if (!user) {
+        loggedIn = false;
+    }
+
     return (
         <Router>
+            {!loggedIn ? <Redirect exact to="/login" /> : null}
             <div className="App">
                 <Switch>
                     <Route exact path={"/"}>

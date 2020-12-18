@@ -1,27 +1,46 @@
-import './Upload.css';
 import React from "react";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+import './Upload.css';
+import Container from "react-bootstrap/cjs/Container";
+import Row from "react-bootstrap/cjs/Row";
+import Col from "react-bootstrap/cjs/Col";
+import Card from "react-bootstrap/cjs/Card";
+import Button from "react-bootstrap/cjs/Button";
+import Form from "react-bootstrap/cjs/Form";
+import {Link} from "react-router-dom";
 import NavBar from "../layout/Navbar";
-import Container from "react-bootstrap/Container";
 
 function Upload() {
     return (
-        <Container fluid className="Upload p-0">
-            <Row className="">
-                <Col><NavBar/></Col>
-            </Row>
-            <Row style={{marginBottom:"6em"}}>
-                <Col>
-                    <h1 className="display-1 text-center">Upload</h1>
-                </Col>
-            </Row>
-            <Row>
-                <Col className="d-flex justify-content-center">
-                    Content
-                </Col>
-            </Row>
-        </Container>
+        <main>
+            <Container>
+                <Row noGutters className="">
+                    <Col><NavBar/></Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <Card className="loginCard">
+                            <Card.Body>
+                                <Card.Title className="cardTitle">Ajouter une instru</Card.Title>
+
+                                <Form>
+                                    <Form.Group controlId="titleInput">
+                                        <Form.Control className="input" type="text" name="title" placeholder="Titre"/>
+                                    </Form.Group>
+                                </Form>
+
+                                <Form>
+                                    <Form.Group controlId="fileInput">
+                                        <Form.Control className="input" type="file" name="file" placeholder="Titre"/>
+                                    </Form.Group>
+                                </Form>
+
+                                <Button className="button login-btn">Sauvegarder</Button>
+                            </Card.Body>
+                        </Card>
+                    </Col>
+                </Row>
+            </Container>
+        </main>
     );
 }
 

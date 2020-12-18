@@ -7,11 +7,15 @@ import Card from "react-bootstrap/cjs/Card";
 import Button from "react-bootstrap/cjs/Button";
 import Form from "react-bootstrap/cjs/Form";
 import {Link} from "react-router-dom";
+import NavBar from "../layout/Navbar";
 
 function Profile() {
     return (
         <main>
             <Container>
+                <Row noGutters className="">
+                    <Col><NavBar/></Col>
+                </Row>
                 <Row>
                     <Col>
                         <Card className="loginCard">
@@ -20,7 +24,7 @@ function Profile() {
 
                                 <Form>
                                     <Form.Group controlId="emailInput">
-                                        <Form.Control className="input" type="email" placeholder="Email" />
+                                        <Form.Control className="input" type="email" placeholder="Email" value="robin.lyuong@ynov.com"/>
                                     </Form.Group>
 
                                     <Form.Group controlId="passwordInput">
