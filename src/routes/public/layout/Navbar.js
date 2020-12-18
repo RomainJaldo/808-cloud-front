@@ -25,7 +25,7 @@ function NavBar() {
                     <Nav className="mr-auto">
                     </Nav>
                     <Nav className="align-items-center">
-                        <InputGroup className="d-flex align-items-center w-auto">
+                        <InputGroup className="d-flex align-items-center">
                             <FormControl
                                 type="text"
                                 placeholder="Rechercher"
