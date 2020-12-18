@@ -24,6 +24,7 @@ function freeze(beatId) {
             console.log(res);
         })
 }
+import CardItem from "./CardItem";
 
 function CardBeat({playBeat, beat}) {
     const votes = (beat.votes) ? beat.votes : null;

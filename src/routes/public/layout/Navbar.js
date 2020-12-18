@@ -17,22 +17,23 @@ function NavBar() {
             <div className="oval"/>
             <Navbar expand="lg" className="navbar-container w-100">
                 <Navbar.Brand href="/" className="navbar-brand">
-                    <img className="logo-pic" alt="logo" src={logo}/>
-                    <h1 className="text-white brand">808 CLOUD</h1>
+                    <Image fluid className="logo-pic" alt="logo" src={logo}/>
+                    <h1 className="text-white brand d-sm-flex d-none">808 CLOUD</h1>
                 </Navbar.Brand>
-
+                <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
                     </Nav>
-                    <Nav className="">
+                    <Nav className="align-items-center">
                         <InputGroup className="d-flex align-items-center">
                             <FormControl
+                                type="text"
                                 placeholder="Rechercher"
                                 aria-label="Rechercher"
                                 aria-describedby="basic-addon2"
-                                className="navbar-input rounded-pill"
+                                className="navbar-input rounded-pill col-10"
                             />
-                            <InputGroup.Append className="inputgroup">
+                            <InputGroup.Append className="inputgroup col-2 p-0">
                                 <Button type="submit"
                                         className="btn-circle small button-submit shadow-none"><FontAwesomeIcon
                                     icon={faSearch}/></Button>

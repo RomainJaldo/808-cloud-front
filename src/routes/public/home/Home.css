@@ -1,12 +1,17 @@
-.carousel-container{
+.carousel-container {
     width: 75%;
 }
 
-.overlay-image{
+.overlay-image {
     font-family: 'Bebas Neue', cursive;
+    transition: transform .2s;
 }
 
-.card-swipe{
+.overlay-image:hover, .overlay-image:active, .overlay-image:focus {
+    transform: scale(1.1);
+}
+
+.card-swipe {
     margin: 0 20px;
 }
 
@@ -16,41 +21,55 @@
     filter: blur(1px);
 }
 
+.img-swipe:hover, .img-swipe:active, .img-swipe:focus {
+    filter: blur(2px);
+}
+
 .card-beat {
     background-color: #3D3D3D;
 }
 
-.play{
+.play {
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     width: 50px;
+    transition: transform .2s;
 }
 
-.button-plus{
+.play svg {
+    transition: transform .2s, color .3s;
+}
+
+.play svg:hover, .play svg:active, .play svg:focus {
+    transform: scale(1.5);
+    color: #9253C8;
+}
+
+.button-plus {
     color: #6e2fa8;
 }
 
-.button-minus{
+.button-minus {
     color: black;
 }
 
-.bg-purple{
+.bg-purple {
     background-color: #6e2fa8;
 }
 
-.bg-purple:hover, .bg-purple:focus{
+.bg-purple:hover, .bg-purple:focus {
     color: #fff;
     background-color: #6e2fa8;
 }
 
-.buttons-comment .btn-primary:not(:disabled):not(.disabled).active, .buttons-comment .btn-primary:not(:disabled):not(.disabled):active{
+.buttons-comment .btn-primary:not(:disabled):not(.disabled).active, .buttons-comment .btn-primary:not(:disabled):not(.disabled):active {
     color: #fff;
     background-color: #6e2fa8;
 }
 
-.number-burns{
+.number-burns {
     font-family: 'Bebas Neue', cursive;
     font-size: 1.5em;
 }

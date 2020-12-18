@@ -1,5 +1,5 @@
 import './Home.css';
-import React from "react";
+import React, {useEffect, useState} from "react";
 import NavBar from "../layout/Navbar";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
