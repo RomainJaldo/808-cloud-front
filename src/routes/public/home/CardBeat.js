@@ -57,9 +57,9 @@ function CardBeat({playBeat, beat}) {
                                 </Col>
                             </Row>
                             <Row>
-                                <Col className="d-flex col-8 p-0 align-items-center">
+                                <Col className="d-flex col-8 align-items-center">
                                     <Link to={beat.urlProfile} className="d-flex text-decoration-none">
-                                    <span className="col-4 m-auto">
+                                    <span className="col-4 m-auto pr-1 pl-0">
                                         <Image fluid className="rounded-circle"
                                                src={beat.urlAvatar}
                                                alt="user pic"
