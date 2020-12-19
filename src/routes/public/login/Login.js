@@ -24,9 +24,9 @@ export default class Login extends React.Component {
     }
 
     componentDidMount() {
-        let token = localStorage.getItem('token');
+        let user = JSON.parse(localStorage.getItem('user'));
 
-        if ( token ) {
+        if ( user ) {
             this.setState({ redirection: true });
         }
     }

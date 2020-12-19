@@ -10,10 +10,12 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import Image from "react-bootstrap/Image";
 import {Link} from "react-router-dom";
 import beatService from "../../../services/beat.service";
+import CardItem from "./CardItem";
 
 function burn(beatId) {
     beatService.createVote(beatId, 'burn')
         .then(res => {
+            window.location.reload(false);
             console.log(res);
         })
 }
@@ -21,10 +23,10 @@ function burn(beatId) {
 function freeze(beatId) {
     beatService.createVote(beatId, 'freeze')
         .then(res => {
+            window.location.reload(false);
             console.log(res);
         })
 }
-import CardItem from "./CardItem";
 
 function CardBeat({playBeat, beat}) {
     const votes = (beat.votes) ? beat.votes : null;

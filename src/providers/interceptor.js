@@ -43,7 +43,7 @@ export default function setup() {
 
                     case 401:
                         // Return to login page + Error message
-                        alert('Veuillez vous connecter')
+                        console.log('Veuillez vous connecter')
                         localStorage.removeItem('user');
                         break;
                     case 403:

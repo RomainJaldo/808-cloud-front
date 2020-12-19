@@ -11,6 +11,25 @@ class BeatService {
             });
     }
 
+    createBeat(form) {
+        return axios
+            .post(`http://localhost:8000/api/v1/instrumentals`, {
+                url: "url",
+                image: null,
+                title: form.title,
+                producer: "http://localhost:8000/api/v1/users/1",
+                categories: [
+                    "http://localhost:8000/api/v1/categories/1"
+                ],
+                comments: [],
+                votes: [],
+                audioFile: null
+            })
+            .then(response => {
+                return response.data;
+            });
+    }
+
     createVote(instrumentalId, voteType) {
         return axios
             .post(`${API_URL}${instrumentalId}/vote/${voteType}`, {})

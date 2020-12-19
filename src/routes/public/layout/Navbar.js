@@ -10,6 +10,9 @@ import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Image from "react-bootstrap/Image";
 
+function logout() {
+    localStorage.removeItem('user');
+}
 
 function NavBar() {
     return (
@@ -60,7 +63,7 @@ function NavBar() {
                             <NavDropdown.Item href="/mybeats">
                                 <FontAwesomeIcon icon={faFireAlt}/><span className="actions">Mes beats</span>
                             </NavDropdown.Item>
-                            <NavDropdown.Item href="#/action-3">
+                            <NavDropdown.Item onClick={() => logout()}>
                                 <FontAwesomeIcon icon={faPowerOff}/><span className="actions">Déconnexion</span>
                             </NavDropdown.Item>
 

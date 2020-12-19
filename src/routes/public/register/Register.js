@@ -6,69 +6,102 @@ import Col from "react-bootstrap/cjs/Col";
 import Card from "react-bootstrap/cjs/Card";
 import Button from "react-bootstrap/cjs/Button";
 import Form from "react-bootstrap/cjs/Form";
-import {Link} from "react-router-dom";
+import {Link, Redirect} from "react-router-dom";
+import authService from "../../../services/auth.service";
 
-function Register() {
-    return (
-        <main>
-            <Container>
-                <Row>
-                    <Col>
-                        <Card className="loginCard">
-                            <Card.Body className="bodyLeft">
-                                <Card.Title className="cardTitle text-center">Déjà un compte ?</Card.Title>
-                                <Link to={`/login`}><Button className="button">Se connecter</Button></Link>
-                            </Card.Body>
-                            <Card.Body>
-                                <Card.Title className="cardTitle">Créer un compte</Card.Title>
+export default class Register extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            email: "",
+            password: "",
+            redirect: false
+        };
 
-                                <Form>
-                                    <Row>
-                                        <Col>
-                                            <Form.Group controlId="emailInput">
-                                                <Form.Control className="input" type="email" placeholder="Email" />
-                                            </Form.Group>
-                                        </Col>
-                                    </Row>
+        this.handleInputChange = this.handleInputChange.bind(this);
+    }
 
-                                    <Row>
-                                        <Col>
-                                            <Form.Group controlId="firstNameInput">
-                                                <Form.Control className="input" type="text" placeholder="Nom" />
-                                            </Form.Group>
-                                        </Col>
+    componentDidMount() {
+        let user = JSON.parse(localStorage.getItem('user'));
 
-                                        <Col>
-                                            <Form.Group controlId="lastNameInput">
-                                                <Form.Control className="input" type="text" placeholder="Prénom" />
-                                            </Form.Group>
-                                        </Col>
-                                    </Row>
+        if ( user ) {
+            this.setState({ redirection: true });
+        }
+    }
 
+    handleInputChange(event) {
+        const target = event.target;
+        const value = target.type === 'checkbox' ? target.checked : target.value;
+        const name = target.name;
 
-                                    <Row>
-                                        <Col>
-                                            <Form.Group controlId="passwordInput">
-                                                <Form.Control className="input" type="password" placeholder="Mot de passe" />
-                                            </Form.Group>
-                                        </Col>
+        this.setState({
+            [name]: value
+        });
+    }
 
-                                        <Col>
-                                            <Form.Group controlId="passwordConfirmInput">
-                                                <Form.Control className="input" type="password" placeholder="Confirmation" />
-                                            </Form.Group>
-                                        </Col>
-                                    </Row>
-                                </Form>
+    handleSubmit = event => {
+        event.preventDefault();
+        const user = {
+            email: this.state.email,
+            password: this.state.password
+        }
 
-                                <Button className="button login-btn">S'inscire</Button>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                </Row>
-            </Container>
-        </main>
-    );
+        authService.register(user)
+            .then(res => {
+                console.log(res);
+                this.setState({ redirection: true })
+            })
+    }
+
+    render() {
+        const { redirection } = this.state;
+        if (redirection) {
+            return <Redirect to="/profile" />
+        }
+        return (
+            <main>
+                <Container>
+                    <Row>
+                        <Col>
+                            <Card className="loginCard">
+                                <Card.Body className="bodyLeft">
+                                    <Card.Title className="cardTitle text-center">Déjà un compte ?</Card.Title>
+                                    <Link to={`/login`}><Button className="button">Se connecter</Button></Link>
+                                </Card.Body>
+                                <Card.Body>
+                                    <Card.Title className="cardTitle">Créer un compte</Card.Title>
+
+                                    <Form onSubmit={this.handleSubmit}>
+                                        <Row>
+                                            <Col>
+                                                <Form.Group controlId="emailInput">
+                                                    <Form.Control className="input" type="email" placeholder="Email" name="email" onChange={this.handleInputChange} />
+                                                </Form.Group>
+                                            </Col>
+                                        </Row>
+
+                                        <Row>
+                                            <Col>
+                                                <Form.Group controlId="passwordInput">
+                                                    <Form.Control className="input" type="password" placeholder="Mot de passe" name="password" onChange={this.handleInputChange} />
+                                                </Form.Group>
+                                            </Col>
+
+                                            <Col>
+                                                <Form.Group controlId="passwordConfirmInput">
+                                                    <Form.Control className="input" type="password" placeholder="Confirmation" />
+                                                </Form.Group>
+                                            </Col>
+                                        </Row>
+
+                                        <Button type={"submit"} className="button login-btn">S'inscire</Button>
+                                    </Form>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                    </Row>
+                </Container>
+            </main>
+        );
+    }
 }
-
-export default Register;
