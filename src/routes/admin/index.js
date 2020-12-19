@@ -59,7 +59,9 @@ export default class Admin extends React.Component {
                                 <Card.Body>
                                     <Card.Title className="cardTitle">Utilisateurs</Card.Title>
 
-                                    <Button className="button">Voir</Button>
+                                    <a href="/admin/user">
+                                        <Button className="button">Voir</Button>
+                                    </a>
                                 </Card.Body>
                             </Card>
                         </Col>
@@ -69,7 +71,9 @@ export default class Admin extends React.Component {
                                 <Card.Body>
                                     <Card.Title className="cardTitle">Instrus</Card.Title>
 
-                                    <Button className="button">Voir</Button>
+                                    <a href="/admin/beat">
+                                        <Button className="button">Voir</Button>
+                                    </a>
                                 </Card.Body>
                             </Card>
                         </Col>
