@@ -22,7 +22,7 @@ export default class Admin extends React.Component {
     componentDidMount() {
         let user = JSON.parse(localStorage.getItem('user'));
 
-        if ( user ) {
+        if ( !user ) {
             this.setState({ redirection: true });
         }
     }
