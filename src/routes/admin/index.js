@@ -37,6 +37,14 @@ export default class Admin extends React.Component {
         });
     }
 
+    goToAdminUsers() {
+
+    }
+
+    goToAdminBeats(){
+
+    }
+
     render() {
         const { redirection } = this.state;
         if (redirection) {
@@ -50,6 +58,16 @@ export default class Admin extends React.Component {
                             <Card className="loginCard">
                                 <Card.Body>
                                     <Card.Title className="cardTitle">Utilisateurs</Card.Title>
+
+                                    <Button className="button">Voir</Button>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+
+                        <Col>
+                            <Card className="loginCard">
+                                <Card.Body>
+                                    <Card.Title className="cardTitle">Instrus</Card.Title>
 
                                     <Button className="button">Voir</Button>
                                 </Card.Body>

@@ -37,6 +37,14 @@ class BeatService {
                 return response.data;
             });
     }
+
+    delete(instrumentalId) {
+        return axios
+            .delete(`http://localhost:8000/api/v1/instrumentals/${instrumentalId}`)
+            .then(response => {
+                return response.data;
+            });
+    }
 }
 
 export default new BeatService();
