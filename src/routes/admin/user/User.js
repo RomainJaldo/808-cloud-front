@@ -9,7 +9,7 @@ import Form from "react-bootstrap/cjs/Form";
 import {Link, Redirect} from "react-router-dom";
 import authService from "../../../services/auth.service";
 
-export default class Register extends React.Component {
+export default class User extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
