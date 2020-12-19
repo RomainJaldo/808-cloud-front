@@ -12,7 +12,10 @@ import Register from "./routes/public/register/Register";
 import MyBeats from "./routes/public/my-beats/MyBeats";
 import Upload from "./routes/public/upload/Upload";
 import Profile from "./routes/public/profile/Profile";
+
 import Admin from "./routes/admin/index";
+import AdminUser from "./routes/admin/user/User";
+import AdminBeat from "./routes/admin/beat/Beat";
 
 function App() {
     //Si connecté loggedIn = true et renvoie vers l'accueil sinon affiche le login
@@ -38,6 +41,8 @@ function App() {
                     <Route exact path={"/profile"} component={() => <Profile/>}/>
 
                     <Route exact path={"/admin"} component={() => <Admin/>}/>
+                    <Route exact path={"/admin/user"} component={() => <AdminUser/>}/>
+                    <Route exact path={"/admin/beat"} component={() => <AdminBeat/>}/>
                 </Switch>
             </div>
         </Router>
