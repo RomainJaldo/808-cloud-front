@@ -47,7 +47,7 @@ export default class Profile extends React.Component {
 
                                     <Form>
                                         <Form.Group controlId="emailInput">
-                                            <Form.Control className="input" type="email" placeholder="Email" value={ (this.user && this.user.email) ? this.user.email : null }/>
+                                            <Form.Control className="input" type="email" placeholder="Email" value={ (this.state.user && this.state.user.email) ? this.state.user.email : null }/>
                                         </Form.Group>
 
                                         <Form.Group controlId="passwordInput">
